@@ -1,9 +1,9 @@
-# Упражнение 1
+"""Упражнение 7.1"""
 
 message = input('What car do you want to get: ')
 print(f'Let me see if I can find you a {message}')
 
-# Упражнение 2
+"""Упражнение 7.2"""
 
 quest = input('How many person, will be stay: ')
 quest = int(quest)
@@ -13,7 +13,7 @@ if quest > 8:
 else:
     print('Your table is ready')
 
-# Упражнение 3
+"""Упражнение 7.3"""
 
 num = input('Input your number: ')
 

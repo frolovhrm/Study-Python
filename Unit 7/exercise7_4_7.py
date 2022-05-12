@@ -1,4 +1,4 @@
-# Упражнение 4
+"""Упражнение 7.4"""
 
 # while True:
 #     topping = input("what topping would you want to add: ")
@@ -7,7 +7,7 @@
 #     else:
 #         print('topping is added')
 
-# Упражнение 5
+"""Упражнение 7.5"""
 
 active = True
 while active:
