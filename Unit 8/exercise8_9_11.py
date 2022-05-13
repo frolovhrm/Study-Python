@@ -14,7 +14,6 @@
 
 messages = ['Hello', 'How are you', 'When you come']
 sent_messages = []
-num = 0
 messages_2 = messages[:]
 
 def send_message(messages):
