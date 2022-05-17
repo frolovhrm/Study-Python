@@ -22,7 +22,7 @@
 # Restaurant.open_restaurant(second_restaurant)
 # Restaurant.open_restaurant(third_restaurant)
 
-"""Упражненеи 3"""
+"""Упражнение 3"""
 
 
 class User():
@@ -35,7 +35,7 @@ class User():
         print(f'{self.first_name} {self.last_name} - {self.age}')
 
     def greet_user(self):
-        print(f'I realy cute to see you {self.first_name} {self.last_name}')
+        print(f'I really cute to see you {self.first_name} {self.last_name}')
 
 
 one = User('Ivan', 'Ivanov', 22)
