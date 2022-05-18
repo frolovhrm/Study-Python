@@ -14,13 +14,20 @@ class Restaurant():
     def open_restaurant(self):
         print(f'\nThe restaurant {self.describe_restaurant()} food is open, clients - {self.number_served} !')
 
-    def set_number_served(self, number_served):
-        number_served = input('Inter client served: ')
-        return number_served
+    def set_number_served(self):
+        number_served_input = int(input('Inter client served over: '))
+        self.number_served = number_served_input
+
+    def increment_number_served(self):
+        self.number_served += 20
+
 
 
 first_restaurant = Restaurant('Willy', 'Italian')
 
-Restaurant.set_number_served()
+
+Restaurant.set_number_served(first_restaurant)
+
+Restaurant.increment_number_served(first_restaurant)
 
 Restaurant.open_restaurant(first_restaurant)
