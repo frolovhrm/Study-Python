@@ -11,38 +11,24 @@ class User():
         print(f'I really cute to see you {self.first_name} {self.last_name}')
 
 
-class Admin(User):
-    def __init__(self, first_name, last_name, age, privileges):
-        super().__init__(first_name, last_name, age)
-        self.privileges = privileges
-
-    def show_privileges(self):
-        print(two.privileges)
-
-    def greet_user(self):
-        print(f'{self.first_name} {self.last_name} is admin')
-
-
 class Privileges():
-    def __init__(self, privileges):
+    def __init__(self, privileges=['разрешено добавлять сообщения']):
         self.privileges = privileges
 
     def show_privileges(self):
         print(self.privileges)
 
 
+class Admin(User):
+    def __init__(self, first_name, last_name, age, ):
+        super().__init__(first_name, last_name, age)
+        self.privileges = Privileges()
 
-one = User('Ivan', 'Ivanov', 22)
+    def greet_user(self):
+        print(f'{self.first_name} {self.last_name} is admin')
 
-two = Admin('Petrov', 'Petr', 33, ['разрешено добавлять сообщения'])
 
-three = Admin('Alex', 'Lee', 44, ['разрешено добавлять сообщения'])
+three = Admin('Alex', 'Lee', 44)
 
-User.describe_user(one)
-User.greet_user(one)
-
-Admin.describe_user(two)
-Admin.greet_user(two)
-Admin.show_privileges(two)
-
-Privileges.show_privileges(three)
+Admin.greet_user(three)
+three.privileges.show_privileges()
