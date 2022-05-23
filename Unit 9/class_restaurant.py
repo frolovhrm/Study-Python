@@ -6,5 +6,3 @@ class Restaurant:
 
     def print_rest(self):
         print(f'name: {self.restaurant_name}\ncuisine: {self.cuisine_type}')
-
-

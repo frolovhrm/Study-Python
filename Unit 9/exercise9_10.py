@@ -1,4 +1,4 @@
-from rest import Restaurant
+from class_restaurant import Restaurant
 
 
 class IceCreamStand(Restaurant):
@@ -20,4 +20,3 @@ two.print_rest()
 print()
 IceCreamStand.print_rest(one)
 Restaurant.print_rest(two)
-
