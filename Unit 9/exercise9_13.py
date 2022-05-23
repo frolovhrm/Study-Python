@@ -2,7 +2,7 @@ import random
 
 
 class Die:
-    def __init__(self, sides):
+    def __init__(self, sides=6):
         self.sides = sides
 
 
@@ -15,11 +15,11 @@ def roll_die(sides):
         shot += 1
 
 
-cube = Die(6)
+cube = Die()
 roll_die(cube.sides)
 
-cube2 = Die(10)
-roll_die(cube2.sides)
+cube = Die(10)
+roll_die(cube.sides)
 
-cube3 = Die(20)
-roll_die(cube3.sides)
+cube = Die(20)
+roll_die(cube.sides)
