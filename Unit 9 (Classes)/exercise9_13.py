@@ -5,7 +5,6 @@ class Die:
     def __init__(self, sides=6):
         self.sides = sides
 
-
     def roll_die(self):
         print(f'\nГраней у кубика {self.sides}:')
         shot = 1
@@ -28,7 +27,7 @@ cube = Die()
 cube.roll_die()
 
 cube = Die(10)
-cube.roll_die()
-
-cube = Die(20)
 roll_die(cube.sides)
+
+cube.sides = 20
+Die.roll_die(cube)
