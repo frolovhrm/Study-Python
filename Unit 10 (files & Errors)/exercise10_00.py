@@ -11,3 +11,7 @@ with open(filename) as file_object:
     lines = file_object.readlines()
 
 print(lines)
+
+with open(filename) as file_object:
+    contents = file_object.read()
+    print(contents.rstrip())
