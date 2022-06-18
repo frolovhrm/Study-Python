@@ -15,5 +15,5 @@ class Employee:
 
 first = Employee('Ivan', 'Ivanov', 5000)
 
-print(first.give_raise())
-print(first.give_raise(5001))
+# print(first.give_raise())
+# print(first.give_raise(5001))
