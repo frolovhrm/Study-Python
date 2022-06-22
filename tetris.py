@@ -21,6 +21,7 @@ class Tetris:
         """Запуск основного цикла игры"""
         while True:
             self._check_events()
+            self.cube.update()
             self._update_screen()
 
     def _check_events(self):
@@ -28,6 +29,19 @@ class Tetris:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.type == pygame.K_RIGHT:
+                    # Перемещение коробля в право
+                    self.cube.moving_right = True
+                elif event.type == pygame.K_LEFT:
+                    self.cube.moving_left = True
+            elif event.type == pygame.KEYUP:
+                if event.type == pygame.K_RIGHT:
+                    self.cube.moving_right = False
+                elif event.type == pygame.K_LEFT:
+                    self.cube.moving_left = False
+
+
 
     def _update_screen(self):
         """Обновление изображения на экране"""
