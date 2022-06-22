@@ -9,7 +9,7 @@ class Cube():
         self.screen_rect = te_game.screen.get_rect()
 
         """Загружает изображение и создает прямоугольник"""
-        self.image = pygame.image.load('cube_four.bmp')
+        self.image = pygame.image.load('cube.bmp')
         self.rect = self.image.get_rect()
         """Кождый новый корабль появляется у нижнего края экрана"""
         self.rect.midtop = self.screen_rect.midtop
