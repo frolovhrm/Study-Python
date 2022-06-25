@@ -12,6 +12,7 @@ class Tetris:
         pygame.init()
         self.settings = Settings()
 
+
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption('Tetris')
 
@@ -30,15 +31,18 @@ class Tetris:
             if event.type == pygame.QUIT:
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
-                if event.type == pygame.K_RIGHT:
+                if event.key == pygame.K_RIGHT:
                     # Перемещение коробля в право
                     self.cube.moving_right = True
-                elif event.type == pygame.K_LEFT:
+                    print('left')
+                elif event.key == pygame.K_LEFT:
                     self.cube.moving_left = True
+                    print('right')
+
             elif event.type == pygame.KEYUP:
-                if event.type == pygame.K_RIGHT:
+                if event.key == pygame.K_RIGHT:
                     self.cube.moving_right = False
-                elif event.type == pygame.K_LEFT:
+                elif event.key == pygame.K_LEFT:
                     self.cube.moving_left = False
 
 
