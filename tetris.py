@@ -12,11 +12,13 @@ class Tetris:
         pygame.init()
         self.settings = Settings()
 
-        # self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height)) # или три следущие строки
+        self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
 
-        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-        self.settings.screen_width = self.screen.get_rect().width
-        self.settings.screen_height = self.screen.get_rect().height
+        # или три следущие строки
+
+        # self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        # self.settings.screen_width = self.screen.get_rect().width
+        # self.settings.screen_height = self.screen.get_rect().height
 
         pygame.display.set_caption('Tetris')
 
@@ -42,10 +44,10 @@ class Tetris:
     def _check_keydown_events(self, event):
         if event.key == pygame.K_RIGHT:
             self.cube.moving_right = True
-            print('right')
+            print(event)
         elif event.key == pygame.K_LEFT:
             self.cube.moving_left = True
-            print('left')
+            print(event)
         elif event.key == pygame.K_q:
             sys.exit()
 
