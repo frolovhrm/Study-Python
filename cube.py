@@ -12,7 +12,7 @@ class Cube():
         self.image = pygame.image.load('cube.bmp')
         self.rect = self.image.get_rect()
         """Кождый новый корабль появляется у нижнего края экрана"""
-        self.rect.midtop = self.screen_rect.midtop
+        self.rect.midbottom = self.screen_rect.midbottom
 
         # Сохранение вещественной координаты центра коробля
         self.x = float(self.rect.x)

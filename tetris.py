@@ -39,7 +39,7 @@ class Tetris:
             self.cube.update()
             self.bullets.update()
             for bullet in self.bullets.copy():
-                if bullet.rect.bottom >= self.settings.screen_height:
+                if bullet.rect.bottom <= 0:
                     self.bullets.remove(bullet)
             print(len(self.bullets))
 
@@ -90,7 +90,7 @@ class Tetris:
 
     def _create_fleet(self):
         """Создание флота"""
-        # Создание первого ряда
+        # Создание первого ряда пришельцев
         alien = Alien(self)
         alien_width, alien_height = alien.rect.size
         available_spase_x = self.settings.screen_width - (2 * alien_width)
@@ -101,6 +101,7 @@ class Tetris:
         available_spase_y = (self.settings.screen_height -(3 * alien_height - cube_heigth))
         numbers_rows = available_spase_y // (2 * alien_height)
 
+        """ пилим остальные ряды"""
         for row_number in range(numbers_rows):
             for alien_number in range(number_aliens_x):
                 self._creat_alien(alien_number, row_number)
