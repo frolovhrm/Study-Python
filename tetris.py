@@ -92,19 +92,29 @@ class Tetris:
         """Создание флота"""
         # Создание первого ряда
         alien = Alien(self)
-        alien_width = alien.rect.width
+        alien_width, alien_height = alien.rect.size
         available_spase_x = self.settings.screen_width - (2 * alien_width)
         number_aliens_x = available_spase_x // (2 * alien_width)
-        for alien_number in range(number_aliens_x):
-            self._creat_alien(alien_number)
 
-    def _creat_alien(self, alien_number):
+        """Определяем количество рядов"""
+        cube_heigth = self.cube.rect.height
+        available_spase_y = (self.settings.screen_height -(3 * alien_height - cube_heigth))
+        numbers_rows = available_spase_y // (2 * alien_height)
+
+        for row_number in range(numbers_rows):
+            for alien_number in range(number_aliens_x):
+                self._creat_alien(alien_number, row_number)
+
+
+
+    def _creat_alien(self, alien_number, row_number):
 
         # создание пришельца в размещение в ряду
         alien = Alien(self)
-        alien_width = alien.rect.width
+        alien_width, alien_height  = alien.rect.size
         alien.x = alien_width + 2 * alien_width * alien_number
         alien.rect.x = alien.x
+        alien.rect.y = alien.rect.height +2 * alien.rect.height * row_number
         self.aliens.add(alien)
 
 
