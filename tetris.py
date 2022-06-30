@@ -1,13 +1,8 @@
 import pygame
-
 import sys
-
 from settings import Settings
-
 from cube import Cube
-
 from bullet import Bullet
-
 from alien import Alien
 
 
@@ -16,10 +11,8 @@ class Tetris:
         pygame.init()
         self.settings = Settings()
 
+        # или окно или fullscreen
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
-
-        # или три следущие строки
-
         # self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         # self.settings.screen_width = self.screen.get_rect().width
         # self.settings.screen_height = self.screen.get_rect().height
@@ -98,7 +91,7 @@ class Tetris:
 
         """Определяем количество рядов"""
         cube_heigth = self.cube.rect.height
-        available_spase_y = (self.settings.screen_height -(3 * alien_height - cube_heigth))
+        available_spase_y = (self.settings.screen_height - (3 * alien_height - cube_heigth))
         numbers_rows = available_spase_y // (2 * alien_height)
 
         """ пилим остальные ряды"""
@@ -106,16 +99,14 @@ class Tetris:
             for alien_number in range(number_aliens_x):
                 self._creat_alien(alien_number, row_number)
 
-
-
     def _creat_alien(self, alien_number, row_number):
 
         # создание пришельца в размещение в ряду
         alien = Alien(self)
-        alien_width, alien_height  = alien.rect.size
+        alien_width, alien_height = alien.rect.size
         alien.x = alien_width + 2 * alien_width * alien_number
         alien.rect.x = alien.x
-        alien.rect.y = alien.rect.height +2 * alien.rect.height * row_number
+        alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number
         self.aliens.add(alien)
 
 
